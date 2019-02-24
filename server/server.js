@@ -14,10 +14,22 @@ app.use(express.static(pub_path));
 const PORT = process.env.PORT || 3000;
 
 io.on('connection', (socket)=>{
-    console.log("Hi there newbie!");
+    console.log("Hi there!");
 
     socket.on('disconnect', ()=>{
-        console.log("Bye bye newbie!");
+        console.log("Bye bye now");
+    })
+
+    socket.emit('newMessage',{
+        from: "charith",
+        to:"sianna",
+        message:"Let's go hiking today? Let me know.",
+        timestamp: new Date().timestamp
+    });
+
+    socket.on('composeMessage', (message)=>{
+        console.log("New message compose event!");
+        console.log(message);
     })
 })
 
