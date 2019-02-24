@@ -1,13 +1,13 @@
 {
   "name": "chat",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "cross-env PORT=3000 node server/server.js"
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node":"10.15.0"
+    "node": "10.15.0"
   },
   "author": "Charith Rathnayake",
   "license": "ISC",
@@ -17,5 +17,14 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "express": "^4.16.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heartyhardy/NodeChat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heartyhardy/NodeChat/issues"
+  },
+  "homepage": "https://github.com/heartyhardy/NodeChat#readme",
+  "description": ""
 }
