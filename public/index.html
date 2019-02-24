@@ -6,6 +6,18 @@
     <title>Node Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        //Connect
+        socket.on('connect',()=>{
+            console.log('Connected to server');
+        });
+        //Disconnect
+        socket.on('disconnect',()=>{
+            console.log('Disconnected from the server');
+        })
+    </script>
 </head>
 <body>
     <h1>Welcome to Node Chat</h1>
