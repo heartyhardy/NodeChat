@@ -20,16 +20,14 @@ io.on('connection', (socket)=>{
         console.log("Bye bye now");
     })
 
-    socket.emit('newMessage',{
-        from: "charith",
-        to:"sianna",
-        message:"Let's go hiking today? Let me know.",
-        timestamp: new Date().timestamp
-    });
-
+    // ReEmit the recieved message from front end
     socket.on('composeMessage', (message)=>{
         console.log("New message compose event!");
-        console.log(message);
+        io.emit('newMessage', {
+            from : message.from,
+            message : message.message,
+            createdAt: new Date().getTime()
+        })
     })
 })
 
